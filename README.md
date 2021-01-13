@@ -1,1 +1,1 @@
-https://github.com/PrinsMaurits/PrinsMaurits-github.io.git
+https://prinsmaurits.github.io/PrinsMaurits-github.io/
