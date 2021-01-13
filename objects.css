@@ -1,0 +1,14 @@
+.paarseBalk {
+    width: 100vw;
+    height: 6.2%;
+    background: #5b247f;
+}
+.logo {
+    width: 380px;
+    height: 106px;
+    position: absolute;
+    top: 64px;
+    left: 31px;
+    display: block;
+    background: url(/home/cornelisvl/Documents/Projects/PWS/logo.png) 0px 0px no-repeat;
+}
