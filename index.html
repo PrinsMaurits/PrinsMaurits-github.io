@@ -21,55 +21,5 @@
 src="https://ap.cs.ucy.ac.cy/viewer/?buid=building_7dbc3eee-f4f2-453c-b515-6373de878698_1606139581789">
   </embed>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-
- var mapCanvas = document.getElementById('map_canvas');
-var geoBtn = document.querySelector('.enable');
-var revokeBtn = document.querySelector('.revoke');
-geoBtn.onclick = function() {
-  console.log('Permission currently denied; future features of the Permissions API will allow us to request permission here.')
-  console.log('Currently you have to reset the permission state using the browser UI.')
-  console.log('In Firefox it is done with Tools > Page Info > Permissions > Access Your Location.')
-}
-
-revokeBtn.onclick = function() {
-  revokePermission();
-}
- if (!"geolocation" in navigator) {
-  alert("No geolocation available!");
-}
-  
-var geoSettings = {
-  enableHighAccuracy: false,
-  maximumAge        : 30000,
-  timeout           : 20000
-};
-function handlePermission() {
-  navigator.permissions.query({name:'geolocation'}).then(function(result) {
-    if (result.state == 'granted') {
-      report(result.state);
-      geoBtn.style.display = 'none';
-    } else if (result.state == 'prompt') {
-      report(result.state);
-      navigator.geolocation.getCurrentPosition(revealPosition,positionDenied,geoSettings);
-    } else if (result.state == 'denied') {
-      report(result.state);
-      geoBtn.style.display = 'inline';
-    }
-    result.onchange = function() {
-      report(result.state);
-    }
-  });
-}
-
-function revokePermission() {
-  navigator.permissions.revoke({name:'geolocation'}).then(function(result) {
-    report(result.state);
-  });
-}
-
-function report(state) {
-  console.log('Permission: ' + state);
-}
-
   <body>
 </html>
